@@ -28,7 +28,7 @@ endif()
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/init_build.cmake)
 add_subdirectory(syscall)
-
+add_subdirectory(FindWDK)
 if(NOT CMAKE_BUILD_TYPE STREQUAL CODECOV)
     if(HYPERVISOR_BUILD_LOADER)
         add_subdirectory(loader)

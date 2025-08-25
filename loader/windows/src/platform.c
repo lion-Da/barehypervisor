@@ -101,7 +101,7 @@ platform_alloc(uint64_t const size) NOEXCEPT
         return NULLPTR;
     }
 
-    ret = ExAllocatePoolWithTag(NonPagedPool, size, BF_TAG);
+    ret = ExAllocatePool2(POOL_FLAG_NON_PAGED, size, BF_TAG);
     if (NULLPTR == ret) {
         bferror("vmalloc failed");
         return NULLPTR;
